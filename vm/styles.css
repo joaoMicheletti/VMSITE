@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 40px;
+    box-shadow: 2px 5px 5px black;
+    background-color: #1b1575;
+    backdrop-filter: blur(4px);
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+header nav ul li a {
+    margin-left: 20px;
+    text-decoration: none;  
+    font-weight: 900;
+    color: #fffafa;
+}
+header nav ul li a:hover {
+    font-size: 19px;
+}
+
+#btn {
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    background-color: #4545c9;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 19px;
+}
+#btn a {
+    text-decoration: none;
+    color: white;
+}
+#btn:hover {
+    opacity: 75%;
+}
+#home {
+    height: 100vh;
+    background-image: url(./assets/01.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    position: relative; /* Adicionado para posicionar o pseudo-elemento corretamente */
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px; /* Ajuste a altura do degradê conforme necessário */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none; /* Permite a interação com os elementos abaixo */
+}
+#home .containerhome {
+    margin-top: 0px;
+    margin-left:  5%;
+    margin-right: 5%;
+    width: 40%;
+}
+
+#home .containerhome  p {
+    font-family: 'Montserrat';
+    font-weight: 900; /* Para o título em negrito */
+    font-size: 20px;   /* Ajuste o tamanho conforme necessário */    /* Cor principal do título */
+    margin-bottom: 20px;  /* Peso regular para o texto do parágrafo */   /* Ajuste o tamanho conforme necessário */
+    line-height: 1.5;  /* Altura da linha para melhor legibilidade */
+    color: #ffffff;    /* Cor do texto do parágrafo */
+}
+@media (max-width:800px){
+    #imghome {
+        display: none;
+    }
+
+}
+#imghome {
+    width: 40%;
+}
+#imghome h1 {
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 70px;
+    color: #cfd0d8;
+    text-shadow: 
+        0px 1px 0px #b8b9bb,   /* Sombra mais clara para criar um efeito de luz */
+        5px 9px 1px rgba(5, 5, 5, 0.6); /* Sombra mais escura para dar profundidade */
+    background: linear-gradient(90deg, #606EFF, #A6BFFF); /* Opcional: efeito de gradiente metálico */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Mantém a cor original mas com efeito metálico */
+}
+#imghome p {
+    margin-top: -40px;
+    margin-left: 180px;
+    color: white;
+    font-size: 20px;
+}
+#ContainersProjetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.projeto-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projeto-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #606EFF;
+}
+.projeto-item .imgProjeto {
+    width: 80%;
+}
+
+.projeto-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Tornando o layout responsivo */
+@media (max-width: 768px) {
+    #ContainersProjetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+#about {
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-container {
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.507);
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2d2699;
+    padding: 10px 0;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tab-button:hover, .tab-button.active {
+    background: #353572; /* Cor mais escura ao focar ou ao clicar */
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.conteudo {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo.active {
+    display: block;
+    opacity: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+section {
+    padding: 50px 0;
+    
+}
+
+footer {
+    background-color: #2d2699;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer #Container ul li {
+    list-style: none;
+}
+footer #Container ul li a {
+    text-decoration: none;
+    color: white;
+}
+footer #Container img {
+    width: 20px;
+}
+#horarios {
+    background-color: #f0f0f02a; /* Cor de fundo suave */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza a div */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    font-family: 'Arial', sans-serif; /* Fonte limpa e legível */
+}
+
+#horarios h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f5f5f8; /* Cor do título */
+}
+
+#horarios p {
+    font-size: 16px;
+    color: #fcfbfb; /* Cor do texto */
+}
+
+#horarios strong {
+    color: #a3837c; /* Destaque para os horários */
+}
+@media (max-width:500px){
+    footer {
+        flex-direction: column;
+    }
+
+}
+
+
+#titleprojetos {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.project-section {
+
+    position: relative;
+}
+.projects-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.project {
+    text-align: center;
+    flex: 0 0 100%;
+    display: none;
+}
+    .slide-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);}
+
+.prev-btn,
+.next-btn {
+    background-color: #5a5e8ab6;;
+    width: 40px ;
+    height: 130px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover {
+    width: 50px;
+}
+
+#imgprojeto{
+    height: 400px;
+    border-radius: 50px;
+    width: 100%;
+}
+#contato {
+    text-align: center;
+}
+#contato a {
+    text-decoration: none;
+}
+#contato img {
+    width: 60px;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+@media (max-width:700px){
+    header {
+        flex-direction: column;
+    }
+    header nav ul li  {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    #home {
+        flex-direction: column;
+    } 
+    #home .containerhome {
+        text-align: center;
+        margin-left: 5%;
+        width: 90%;
+        margin-bottom: 60px;
+    }
+    .conteudo {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 60px;
+    }
+    #imghome {
+        width: 100%;
+    }
+    #about {
+        flex-direction: column;
+    }    
+    .prev-btn,
+    .next-btn {
+        width: 40px ;
+        height: 130px;
+        background-color: rgb(76, 160, 175);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #contato img {
+        width: 60px;
+        margin-top: 5px;
+        margin-right: 20px;
+    }
+}
+#titlecusos {
+    text-align: center;
+    margin-bottom: 60px;
+}
+#cursos img {
+    height: 500px;
+    width: 80%;
+}
+#info {
+    width: 80%;
+    margin-left: 10%;
+}
+#info p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+#info  a {
+    font-weight: 900;
+}
+@media (max-width:700px){
+    #cursos img {
+        height: 450px;
+        width: 80%;
+    }
+    
+
+}

@@ -1,0 +1,188 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #464343;
+}
+
+/* Estilos do cabeçalho */
+header {
+    margin-top: -20px;
+    background-image: url(./image/apresentacao.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    height: 200px;
+}
+h1 {
+    text-align: center;
+    color: white;
+
+    text-decoration: underline;
+}
+#top {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+}
+@media(max-width: 700px){
+    #top {
+        flex-direction: column;
+    }
+    #top #curso  {
+        text-align: center;
+        margin-left: 5%;
+        width: 90%;
+    }
+    #logonode {
+        display: none;
+    }
+    #meio {
+        flex-direction: column;
+    }
+    #meio #porque {
+        margin-right: 5%;
+        width: 90%;
+    }
+    #meio #destaque {
+        display: none;
+    }
+    #curso {
+        background-image: url('./nonode.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    #porque {
+        background-image: url('./vs.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+}
+h2 {
+    margin-left: 5px;
+    font-size: 28px;
+}
+#curso  {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+} #curso p {
+    font-size: 19px;
+    line-height: 30px;
+}
+#logonode {
+    width: 40%;
+    margin-top: 60px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#logonode img {
+    width: 500px;
+}
+#meio {
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+#porque {
+    border-radius: 10px;
+    border: solid 2px rgb(134, 133, 133);
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+    line-height: 30px;
+    background-color: #4e4848;
+    box-shadow: 4px 4px 4px #333;
+}
+#porque p {margin-left: 5px;}
+#porque:hover {
+    background-color: #615c5c;
+}
+#destaque{
+    text-align: center;
+    border-radius: 10px;
+    border: solid 2px rgb(134, 133, 133);
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+    line-height: 30px;
+    background-color: #4e4848;
+    box-shadow: 4px 4px 4px #333;
+}
+#destaque p {
+    margin-left: 5px;
+}
+#destaque:hover {
+    background-color: #615c5c;
+}
+/* Estilos do corpo da página */
+#T {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Estilos do rodapé */
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.footer-right {
+    margin-left: 10%;
+    width: 80%;
+}
+footer img {
+    width: 80px;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+
+/* Estilos do botão de inscrição */
+.btn-inscreva-se {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ef0606;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilos da imagem de fundo */
+.background-img {
+    background-image: url('./image/Roulette.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px; /* Ajuste conforme necessário */
+    position: relative;
+}
+
+/* Estilos do texto sobreposto na imagem de fundo */
+.overlay-text {
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+#PP {
+    margin-top: 200px;
+}
